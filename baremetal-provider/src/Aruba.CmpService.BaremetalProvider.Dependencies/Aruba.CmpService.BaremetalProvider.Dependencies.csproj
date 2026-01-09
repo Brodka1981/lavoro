@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ArubaMessageBusVersion>1.0.0-rc2-net80.19</ArubaMessageBusVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+      <PackageReference Include="Microsoft.Extensions.Http.Polly" Version="8.0.10" />
+      <PackageReference Include="Polly" Version="8.4.2" />
+      <PackageReference Include="Polly.Contrib.WaitAndRetry" Version="1.1.1" />
+      <PackageReference Include="Polly.Extensions.Http" Version="3.0.0" />
+      <PackageReference Include="Aruba.MessageBus" Version="$(ArubaMessageBusVersion)" />
+      <PackageReference Include="Aruba.MessageBus.Abstractions" Version="$(ArubaMessageBusVersion)" />
+      <PackageReference Include="Aruba.MessageBus.OpenTelemetry" Version="$(ArubaMessageBusVersion)" />
+      <PackageReference Include="Aruba.MessageBus.Confluent.Kafka" Version="$(ArubaMessageBusVersion)" />
+      <PackageReference Include="Aruba.MessageBus.MongoDb" Version="$(ArubaMessageBusVersion)" />
+      <PackageReference Include="Aruba.MessageBus.Microsoft.Extensions.Hosting" Version="$(ArubaMessageBusVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Aruba.CmpService.BaremetalProvider.HttpProviders\Aruba.CmpService.BaremetalProvider.HttpProviders.csproj" />
+    <ProjectReference Include="..\Aruba.CmpService.BaremetalProvider.Infrastructure\Aruba.CmpService.BaremetalProvider.Infrastructure.csproj" />
+    <ProjectReference Include="..\Aruba.CmpService.BaremetalProvider.MongoDb\Aruba.CmpService.BaremetalProvider.MongoDb.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,185 @@
+{
+    "category": {
+        "id": "string",
+        "name": "string",
+        "typology": {
+            "extraInfo": {
+            },
+            "id": "string",
+            "limitResourceAvailableForLocation": 0,
+            "name": "string",
+            "parents": [
+                {
+                    "id": "string",
+                    "name": "string"
+                }
+            ]
+        }
+    },
+    "ecommerce": {
+        "productCatalog": {
+            "products": [
+                {
+                    "addons": [
+                        {
+                            "attributes": {
+                                "additionalProp1": "string",
+                                "additionalProp2": "string",
+                                "additionalProp3": "string"
+                            },
+                            "extraInfo": {
+                                "provisioningProductId": "string",
+                                "provisioningProductName": "string"
+                            },
+                            "id": "string",
+                            "name": "string",
+                            "plans": [
+                                {
+                                    "productPlan": {
+                                        "displayOrder": 0,
+                                        "id": "string",
+                                        "productVariantId": "string"
+                                    },
+                                    "productPlanPhases": [
+                                        {
+                                            "billingPeriod": "string",
+                                            "fixedPrice": {
+                                                "currency": "string",
+                                                "price": 0
+                                            },
+                                            "id": "string",
+                                            "name": "string"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "price": 0,
+                            "productName": "string"
+                        }
+                    ],
+                    "attributes": [
+                        {
+                            "name": "string",
+                            "value": "string"
+                        }
+                    ],
+                    "categoryName": "Computing",
+                    "extraInfo": {
+                        "provisioningProductId": "string",
+                        "provisioningProductName": "string"
+                    },
+                    "id": "507f191e810c19729de860aa",
+                    "plans": [
+                        {
+                            "productPlan": {
+                                "displayOrder": 0,
+                                "id": "string",
+                                "productVariantId": "string"
+                            },
+                            "productPlanPhases": [
+                                {
+                                    "billingPeriod": "string",
+                                    "fixedPrice": {
+                                        "currency": "string",
+                                        "price": 0
+                                    },
+                                    "id": "string",
+                                    "name": "string"
+                                }
+                            ]
+                        }
+                    ],
+					"variantId": "string",
+                    "variantName": "string"
+                }
+            ]
+        },
+        "project": "string",
+        "subscriptionServices": {
+            "billingContainerId": "string",
+            "currency": "string",
+            "orderId": "string",
+            "plan": {
+                "billingPeriod": "string"
+            },
+            "serviceBasketId": "string",
+            "serviceGroupId": "string",
+            "services": [
+                {
+                    "creationDate": "2024-02-16T11:10:08.134Z",
+                    "extraInfo": {
+                        "dataCenter": "string",
+                        "provisioningProductId": "string",
+                        "provisioningProductName": "string"
+                    },
+                    "initialOrder": true,
+                    "name": "string",
+                    "orderItemId": "string",
+                    "productPlanId": "string",
+                    "productVariantId": "string",
+                    "quantity": 0,
+                    "resource": {
+                        "path": "string"
+                    },
+                    "serviceGroupId": "string",
+                    "serviceId": "string",
+                    "status": "string",
+                    "type": "Base"
+                }
+            ],
+            "subscriptionId": "string",
+            "totalPrice": 0
+        }
+    },
+    "identity": {
+        "account": "aru-24468",
+        "company": "ARU",
+        "tenant": "ARU",
+        "userId": "f:3381487d-01e6-4061-976f-dbe2de3848d7:aru-24468",
+        "username": "aru-24468"
+    },
+    "linkedResources": [
+        {
+			"uri": "projects/65c5f92fbe40fc2cc3ecb18a/Aruba.Network/vpcs/65dca199d41c169237766ce4/subnet/65db723dd41c169237766c4d"
+        },
+		{
+			"uri": "projects/65c5f92fbe40fc2cc3ecb18a/Aruba.Network/vpcs/507f191e810c19729de860ee/securitygroup/65db723ad41c169237766c49"
+        },
+		{
+			"uri": "projects/65c5f92fbe40fc2cc3ecb18a/Aruba.Network/vpcs/507f191e810c19729de860ee/elasticip/507f191e810c19729de860ec"
+        },
+		{
+			"uri": "projects/65c5f92fbe40fc2cc3ecb18a/Aruba.Compute/keypair/507f191e810c19729de860ed"
+        },
+		{
+			"uri": "projects/65c5f92fbe40fc2cc3ecb18a/Aruba.Network/vpc/65db7203d41c169237766c3c"
+        }
+    ],
+    "location": {
+        "city": "string",
+        "code": "ITBG-Bergamo",
+        "country": "string",
+        "dataCenters": [
+            {
+                "allowedServices": [
+                    "block_storage"
+                ],
+                "code": "dc1",
+                "name": "string"
+            }
+        ],
+		"name": "string",
+        "unavailable": true,
+        "value": "string"
+    },
+    "name": "test-2802-05",
+    "project": {
+        "id": "65c5f92fbe40fc2cc3ecb18a",
+        "name": "my-project"
+    },
+    "properties": {
+      "sizeGB": 1,
+      "billingPeriod": "Month"
+    },
+    "tags": [ ]
+}

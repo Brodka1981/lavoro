@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ArubaMessageBusVersion>1.0.0-rc2-net80.19</ArubaMessageBusVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Exceptions\**" />
+    <Compile Remove="Models\temp\**" />
+    <Compile Remove="QueryHandlers\Payments\Responses\**" />
+    <Compile Remove="QueryHandlers\Responses\**" />
+    <Compile Remove="UseCases\Payments\**" />
+    <EmbeddedResource Remove="Exceptions\**" />
+    <EmbeddedResource Remove="Models\temp\**" />
+    <EmbeddedResource Remove="QueryHandlers\Payments\Responses\**" />
+    <EmbeddedResource Remove="QueryHandlers\Responses\**" />
+    <EmbeddedResource Remove="UseCases\Payments\**" />
+    <None Remove="Exceptions\**" />
+    <None Remove="Models\temp\**" />
+    <None Remove="QueryHandlers\Payments\Responses\**" />
+    <None Remove="QueryHandlers\Responses\**" />
+    <None Remove="UseCases\Payments\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Aruba.CmpService.ResourceProvider.Common" Version="1.8.8" />
+    <PackageReference Include="Aruba.Hangfire" Version="4.0.0" />
+    <PackageReference Include="Aruba.MessageBus" Version="$(ArubaMessageBusVersion)" />
+    <PackageReference Include="Aruba.MessageBus.Abstractions" Version="$(ArubaMessageBusVersion)" />
+    <PackageReference Include="Throw" Version="1.4.0" />
+    <PackageReference Include="CompareNETObjects" Version="4.83.0" />
+    <PackageReference Include="YamlDotNet" Version="16.3.0" />
+  </ItemGroup>
+  <PropertyGroup>
+    <DocumentationFile>$(AssemblyName).xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="$(AssemblyName).xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="QueryHandlers\Firewalls\Responses\" />
+    <Folder Include="QueryHandlers\MCIs\Responses\" />
+    <Folder Include="QueryHandlers\Payments\Responses\" />
+    <Folder Include="QueryHandlers\Responses\" />
+    <Folder Include="QueryHandlers\Servers\Responses\" />
+    <Folder Include="QueryHandlers\Swaases\Responses\" />
+    <Folder Include="QueryHandlers\Switches\Responses\" />
+  </ItemGroup>
+
+</Project>

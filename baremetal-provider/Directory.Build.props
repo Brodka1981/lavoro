@@ -1,0 +1,20 @@
+<Project>
+  
+  <PropertyGroup>
+    <RepositoryRootDirectory>$(MSBuildThisFileDirectory)</RepositoryRootDirectory>
+    <RepositoryRelativeProjectDirectory>$([MSBuild]::MakeRelative($(RepositoryRootDirectory), $(MSBuildProjectDirectory)))</RepositoryRelativeProjectDirectory>    
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CA1014;CS1591</NoWarn>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <AllowedReferenceRelatedFileExtensions>$(AllowedReferenceRelatedFileExtensions);.pdb</AllowedReferenceRelatedFileExtensions>
+    <AnalysisMode>AllEnabledByDefault</AnalysisMode>
+  </PropertyGroup>
+
+</Project>

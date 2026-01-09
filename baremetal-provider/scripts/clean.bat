@@ -1,0 +1,1 @@
+pwsh.exe -executionpolicy remotesigned -File %~dp0clean.ps1

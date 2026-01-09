@@ -1,0 +1,1744 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aruba.CmpService.BaremetalProvider.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Extensions.SecurityExtensions.GetPricelist(System.Security.Claims.ClaimsIdentity)">
+            <summary>
+            Legge il Pricelist dal token
+            </summary>
+            <param name="claimsIdentity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Extensions.SecurityExtensions.GetRole(System.Security.Claims.ClaimsIdentity)">
+            <summary>
+            Legge il Role dal token
+            </summary>
+            <param name="claimsIdentity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Extensions.SecurityExtensions.GetTenant(System.Security.Claims.ClaimsIdentity)">
+            <summary>
+            Legge il tenant dal token
+            </summary>
+            <param name="claimsIdentity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Extensions.SecurityExtensions.GetAccount(System.Security.Claims.ClaimsIdentity)">
+            <summary>
+            Legge l'account dal token
+            </summary>
+            <param name="claimsIdentity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Extensions.SecurityExtensions.GetUserName(System.Security.Claims.ClaimsIdentity)">
+            <summary>
+            Legge lo username dal token
+            </summary>
+            <param name="claimsIdentity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Extensions.SecurityExtensions.GetCompany(System.Security.Claims.ClaimsIdentity)">
+            <summary>
+            Legge il claim dal token
+            </summary>
+            <param name="claimsIdentity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Extensions.SecurityExtensions.GetClaim(System.Security.Claims.ClaimsIdentity,System.String)">
+            <summary>
+            Legge i claim
+            </summary>
+            <param name="claimsIdentity"></param>
+            <param name="claimName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Extensions.SecurityExtensions.GetTenant(System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            Legge i claim
+            </summary>
+            <param name="claimsPrincipal"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Extensions.SecurityExtensions.GetCompany(System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            Legge i claim
+            </summary>
+            <param name="claimsPrincipal"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Extensions.SecurityExtensions.GetUserId(System.Security.Claims.ClaimsIdentity)">
+            <summary>
+            Legge i claim
+            </summary>
+            <param name="claimsIdentity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Extensions.SecurityExtensions.GetUserId(System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            Legge i claim
+            </summary>
+            <param name="claimsPrincipal"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Extensions.SecurityExtensions.GetLegacyToken(System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            Legge i claim
+            </summary>
+            <param name="claimsPrincipal"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Extensions.SecurityExtensions.GetLegacyToken(System.Security.Claims.ClaimsIdentity)">
+            <summary>
+            Legge i claim
+            </summary>
+            <param name="claimsIdentity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Jobs.IDeleteTokensJob.Execute">
+            <summary>
+            Job for deleting tokens,
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Providers.IAdminLegacyProvider.GetFolderServices(System.Collections.Generic.List{Aruba.CmpService.BaremetalProvider.Abstractions.Providers.Models.Legacy.Internal.LegacyResourceFilter},System.String)">
+            <summary>
+            Get resources by ids
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Providers.IAdminLegacyProvider.GetFolderLinkableServices(System.String)">
+            <summary>
+            Get resources
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Providers.IAdminLegacyProvider.GetAutorechargeAsync(System.String)">
+            <summary>
+            Get autorecharge info
+            </summary>
+        </member>
+        <member name="T:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Providers.IApiCallOutput">
+            <summary>
+            Interface of ApiCallOuput
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Providers.IApiCallOutput.Err">
+            <summary>
+            Error
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Providers.IApiCallOutput.InternalServerError">
+            <summary>
+            InternalServerError
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Providers.IApiCallOutput.StatusCode">
+            <summary>
+            HttpStatusCode
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Providers.IApiCallOutput.Success">
+            <summary>
+            Success
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Providers.IInternalLegacyProvider.UpsertAutomaticRenewAsync(Aruba.CmpService.BaremetalProvider.Abstractions.Providers.Models.Legacy.Internal.LegacyAutoRenew)">
+            <summary>
+            Set autorenew for a resource list
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Providers.IInternalLegacyProvider.GetLegacyResources">
+            <summary>
+            Get resources
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Providers.IInternalLegacyProvider.GetFolderServices(System.Collections.Generic.List{Aruba.CmpService.BaremetalProvider.Abstractions.Providers.Models.Legacy.Internal.LegacyResourceFilter},System.Boolean)">
+            <summary>
+            Get resources by ids
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Providers.IInternalLegacyProvider.GetAutorechargeAsync">
+            <summary>
+            Get autorecharge info
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Providers.IInternalLegacyProvider.GetRegions">
+            <summary>
+            Get regions
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Providers.IInternalLegacyProvider.GetServicesWithRegions">
+            <summary>
+            Get legacy services with related region
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Providers.IPaymentsProvider.GetPaymentMethodsAsync">
+            <summary>
+            Get payment methods list
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Providers.IPaymentsProvider.PayOrderAsync(Aruba.CmpService.BaremetalProvider.Abstractions.Providers.Models.Legacy.Payments.LegacyPayOrderRequest)">
+            <summary>
+            Confirm order payment.
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Providers.IPaymentsProvider.GetFraudRiskAssessmentAsync">
+            <summary>
+            Evaluate fraud risk
+            </summary>
+            <returns>TRUE if there is risk</returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Providers.IProjectProvider.GetDefaultProjectAsync(System.String)">
+            <summary>
+            Get default project for the given user
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Providers.ISmartStoragesProvider.GetProtolList(System.String)">
+            <summary>
+            Get protocols by smart storage id
+            </summary>
+            <param name="id">Smart storage id</param>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Providers.ISmartStoragesProvider.ToggleProtocol(System.String,Aruba.CmpService.BaremetalProvider.Abstractions.Models.SmartStorages.ServiceType,System.Boolean)">
+            <summary>
+            Enable or disable smart storage protocol 
+            </summary>
+            <param name="id">smart storage id</param>
+            <param name="serviceType">protocol type</param>
+            <param name="enable">TRUE to enable, FALSE to disable the service</param>
+            <returns>TRUE if success</returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Providers.ISmartStoragesProvider.ActivateSmartStorage(System.String,System.String)">
+            <summary>
+            Enable or disable smart storage protocol 
+            </summary>
+            <param name="id">smart storage id</param>
+            <param name="password">smart storage password</param>
+            <returns>TRUE if success</returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Providers.ISmartStoragesProvider.GetStatistics(System.String)">
+            <summary>
+            Get smart storage statistics
+            </summary>
+            <param name="id">smart storage id</param>
+            <returns>Smart storage statistics</returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Providers.ISmartStoragesProvider.GetSnapshots(System.String)">
+            <summary>
+            Get smart storage snapshots
+            </summary>
+            <param name="id">smart storage id</param>
+            <returns>Smart storage snapshots</returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Providers.ISmartStoragesProvider.DeleteSnapshot(System.String,System.String)">
+            <summary>
+            Delete smart storage snapshot
+            </summary>
+            <param name="id">smart storage id</param>
+            <param name="snapshotId">snapshot id</param>
+            <returns>TRUE if success</returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Providers.ISmartStoragesProvider.DeleteSnapshotTask(System.String,System.Int32)">
+            <summary>
+            Delete smart storage snapshot task
+            </summary>
+            <param name="id">smart storage id</param>
+            <param name="snapshotId">snapshot id</param>
+            <returns>TRUE if success</returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Providers.ISmartStoragesProvider.CreateSmartFolder(System.String,System.String)">
+            <summary>
+            create new Smart Storage folder
+            </summary>
+            <param name="id">smart storage id</param>
+            <param name="name">folder name</param>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Providers.ISmartStoragesProvider.DeleteSmartFolder(System.String,System.String)">
+            <summary>
+            Delete smart storage folder
+            </summary>
+            <param name="id">smart storage id</param>
+            <param name="smartFolderId">smart folder id</param>
+            <returns>TRUE if success</returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Providers.ISmartStoragesProvider.CreateSnapshotTask(System.String,Aruba.CmpService.BaremetalProvider.Abstractions.Dtos.SmartStorages.SmartStorageCreateSnapshotTaskDto,System.Boolean)">
+            <summary>
+            Create snapshot task
+            </summary>
+            <param name="id">smart storage id</param>
+            <param name="snapshot"></param>
+            <param name="isRootFolder"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Providers.ISmartStoragesProvider.CreateSnapshot(System.String,System.String,System.Boolean)">
+            <summary>
+            Create manual snapshot 
+            </summary>
+            <param name="id">smart storage id</param>
+            <param name="smartFolderName">smart fodler name</param>
+            <param name="isRootFolder">smart fodler name</param>
+            <returns></returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Providers.ISmartStoragesProvider.UpdateSnapshotTask(System.String,System.Int32,System.Boolean)">
+            <summary>
+            Enable or disable  snapshot task
+            </summary>
+            <param name="id"></param>
+            <param name="snapshotTaskId"></param>
+            <param name="enable"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Providers.ISmartStoragesProvider.RestoreSnapshot(System.String,System.String)">
+            <summary>
+            Apply manual snapshot 
+            </summary>
+            <param name="id">smart storage id</param>
+            <param name="snapshotId">snapshot id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Providers.ISmartStoragesProvider.GetSmartFolders(System.Int64)">
+            <summary>
+            Get smart folders
+            </summary>
+            <param name="id">smart storage id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Repositories.IFirewallCatalogRepository.GetAllAsync">
+            <summary>
+            Get all firewall catalog
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Repositories.IHPCCatalogRepository.GetHPCCatalogAsync(System.String)">
+            <summary>
+            Get mci catalog by model
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Repositories.IHPCCatalogRepository.GetAllAsync">
+            <summary>
+            Get all mci catalog
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Repositories.ILocationMapRepository.GetLocationMapAsync(System.String)">
+            <summary>
+            Get location map by legacy value
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Repositories.IMCICatalogRepository.GetMCICatalogAsync(System.String)">
+            <summary>
+            Get mci catalog by model
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Repositories.IMCICatalogRepository.GetAllAsync">
+            <summary>
+            Get all mci catalog
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Repositories.IServerCatalogRepository.GetServerCatalogAsync(System.String)">
+            <summary>
+            Get server catalog by model
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Repositories.IServerCatalogRepository.GetAllAsync">
+            <summary>
+            Get all server catalog
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Repositories.ISmartStorageCatalogRepository.GetAllAsync">
+            <summary>
+            Get all smart storage catalog
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Repositories.ISwaasCatalogRepository.GetAllAsync">
+            <summary>
+            Get all swaas catalog
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Repositories.ISwitchCatalogRepository.GetAllAsync">
+            <summary>
+            Get all switch catalog
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.IFirewallsService.Search(Aruba.CmpService.BaremetalProvider.Abstractions.QueryHandlers.Firewalls.Requests.FirewallSearchFilterRequest,System.Threading.CancellationToken)">
+            <summary>
+            Get server list 
+            </summary>
+            <param name="request"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.IFirewallsService.GetById(Aruba.CmpService.BaremetalProvider.Abstractions.QueryHandlers.Common.Requests.BaseGetByIdRequest{Aruba.CmpService.BaremetalProvider.Abstractions.Models.Firewalls.Firewall},System.Threading.CancellationToken)">
+            <summary>
+            Get server by id
+            </summary>
+            <param name="request"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.IFirewallsService.Rename(Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.Common.Requests.RenameUseCaseRequest,System.Threading.CancellationToken)">
+            <summary>
+            rename server
+            </summary>
+            <param name="request"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.IFirewallsService.SearchIpAddresses(Aruba.CmpService.BaremetalProvider.Abstractions.QueryHandlers.Firewalls.Requests.FirewallIpAddressesFilterRequest,System.Threading.CancellationToken)">
+            <summary>
+            Get server ip addresses
+            </summary>
+            <param name="request"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.IFirewallsService.UpdateIpAddress(Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.Common.Requests.UpdateIpUseCaseRequest,System.Threading.CancellationToken)">
+            <summary>
+            Update server ip address
+            </summary>
+            <param name="request"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.IFirewallsService.SearchCatalog(Aruba.CmpService.BaremetalProvider.Abstractions.QueryHandlers.Common.Requests.CatalogFilterRequest,System.Threading.CancellationToken)">
+            <summary>
+            Get servers catalog
+            </summary>
+            <param name="request"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.IFirewallsService.SetAutomaticRenew(Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.Common.Requests.SetAutomaticRenewUseCaseRequest,System.Threading.CancellationToken)">
+            <summary>
+            Set automatic renew
+            </summary>
+            <param name="request"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.IPaymentsService.PayOrderWithWalletAsync(System.String,Aruba.CmpService.BaremetalProvider.Abstractions.QueryHandlers.Payments.Requests.PayOrderRequest,System.Threading.CancellationToken)">
+            <summary>
+            @hpc-jan-2026
+            NOTE: for HPC implementation by the end of January 2026. This method is supposed to handle the payment of an order
+            only by reseller or via wallet credit.
+            </summary>
+            <param name="request"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.IServersService.Search(Aruba.CmpService.BaremetalProvider.Abstractions.QueryHandlers.Servers.Requests.ServerSearchFilterRequest,System.Threading.CancellationToken)">
+            <summary>
+            Search servers
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.IServersService.GetById(Aruba.CmpService.BaremetalProvider.Abstractions.QueryHandlers.Common.Requests.BaseGetByIdRequest{Aruba.CmpService.BaremetalProvider.Abstractions.Models.Servers.Server},System.Threading.CancellationToken)">
+            <summary>
+            Get server by id
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.IServersService.Rename(Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.Common.Requests.RenameUseCaseRequest,System.Threading.CancellationToken)">
+            <summary>
+            Rename server
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.IServersService.DeletePleskLicense(Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.Servers.Requests.DeletePleskLicenseRequest,System.Threading.CancellationToken)">
+            <summary>
+            Delete plesk license
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.IServersService.Restart(Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.Servers.Requests.ServerRestartUseCaseRequest,System.Threading.CancellationToken)">
+            <summary>
+            Restart server
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.IServersService.SearchIpAddresses(Aruba.CmpService.BaremetalProvider.Abstractions.QueryHandlers.Servers.Requests.ServerIpAddressesFilterRequest,System.Threading.CancellationToken)">
+            <summary>
+            Search ip addresses
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.IServersService.UpdateIpAddress(Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.Common.Requests.UpdateIpUseCaseRequest,System.Threading.CancellationToken)">
+            <summary>
+            Update ip address
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.IServersService.SearchCatalog(Aruba.CmpService.BaremetalProvider.Abstractions.QueryHandlers.Common.Requests.CatalogFilterRequest,System.Threading.CancellationToken)">
+            <summary>
+            Search server catalog
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.IServersService.SetAutomaticRenew(Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.Common.Requests.SetAutomaticRenewUseCaseRequest,System.Threading.CancellationToken)">
+            <summary>
+            Set automatic renew
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISmartStoragesService.Search(Aruba.CmpService.BaremetalProvider.Abstractions.QueryHandlers.SmartStorages.Requests.SmartStorageSearchFilterRequest,System.Threading.CancellationToken)">
+            <summary>
+            Search smart storages
+            </summary>    
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISmartStoragesService.GetById(Aruba.CmpService.BaremetalProvider.Abstractions.QueryHandlers.Common.Requests.BaseGetByIdRequest{Aruba.CmpService.BaremetalProvider.Abstractions.Models.SmartStorages.SmartStorage},System.Threading.CancellationToken)">
+            <summary>
+            Get smart storage by id
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISmartStoragesService.Rename(Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.Common.Requests.RenameUseCaseRequest,System.Threading.CancellationToken)">
+            <summary>
+            Rename smart storage
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISmartStoragesService.SearchCatalog(Aruba.CmpService.BaremetalProvider.Abstractions.QueryHandlers.Common.Requests.CatalogFilterRequest,System.Threading.CancellationToken)">
+            <summary>
+            Search smart storage catalog
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISmartStoragesService.GetProtocols(Aruba.CmpService.BaremetalProvider.Abstractions.QueryHandlers.SmartStorages.Requests.SmartStorageProtocolsRequest)">
+            <summary>
+            get protocols
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISmartStoragesService.EnableProtocol(Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.SmartStorages.Requests.SmartStorageEnableProtocolUseCaseRequest)">
+            <summary>
+            Enable protocol
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISmartStoragesService.DisableProtocol(Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.SmartStorages.Requests.SmartStorageDisableProtocolUseCaseRequest)">
+            <summary>
+            Disable protocol
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISmartStoragesService.SearchFolders(Aruba.CmpService.BaremetalProvider.Abstractions.QueryHandlers.SmartStorages.Requests.SmartStorageFoldersRequest,System.Threading.CancellationToken)">
+            <summary>
+            Search smart folders
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISmartStoragesService.CreateSmartFolder(Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.SmartStorages.Requests.SmartStorageCreateFolderUseCaseRequest)">
+            <summary>
+            Create smart folder
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISmartStoragesService.DeleteSmartFolder(Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.SmartStorages.Requests.SmartStorageDeleteFolderUseCaseRequest)">
+            <summary>
+            Delete smart folder
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISmartStoragesService.CreateSnapshot(Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.SmartStorages.Requests.SmartStorageCreateSnapshotUseCaseRequest)">
+            <summary>
+            Create manual snapshot
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISmartStoragesService.ApplySnapshot(Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.SmartStorages.Requests.SmartStorageApplySnapshotUseCaseRequest)">
+            <summary>
+            Apply snapshot
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISmartStoragesService.DeleteSnapshot(Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.SmartStorages.Requests.SmartStorageDeleteSnapshotUseCaseRequest)">
+            <summary>
+            Delete manual snapshot
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISmartStoragesService.CreateSnapshotTask(Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.SmartStorages.Requests.SmartStorageCreateSnapshotTaskUseCaseRequest)">
+            <summary>
+            Create automatic snapshot
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISmartStoragesService.UpdateSnapshotTask(Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.SmartStorages.Requests.SmartStorageUpdateSnapshotTaskUseCaseRequest)">
+            <summary>
+            Update automatic snapshot
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISmartStoragesService.DeleteSnapshotTask(Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.SmartStorages.Requests.SmartStorageDeleteSnapshotTaskUseCaseRequest)">
+            <summary>
+            Delete automatic snapshot
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISmartStoragesService.Activate(Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.SmartStorages.Requests.SmartStorageActivateUseCaseRequest,System.Threading.CancellationToken)">
+            <summary>
+            Activate smart storage
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISmartStoragesService.ChangePassword(Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.SmartStorages.Requests.SmartStorageChangePasswordUseCaseRequest,System.Threading.CancellationToken)">
+            <summary>
+            Change password
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISmartStoragesService.GetSnapshots(Aruba.CmpService.BaremetalProvider.Abstractions.QueryHandlers.SmartStorages.Requests.SmartStorageSnapshotsRequest)">
+            <summary>
+            Get snapshots
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISmartStoragesService.GetStatistics(Aruba.CmpService.BaremetalProvider.Abstractions.QueryHandlers.SmartStorages.Requests.SmartStorageStatisticsRequest)">
+            <summary>
+            Get smart storage statistics
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISmartStoragesService.GetAvailableSmartFolders(Aruba.CmpService.BaremetalProvider.Abstractions.QueryHandlers.SmartStorages.Requests.GetAvailableSmartFoldersRequest)">
+            <summary>
+            Get available smart folders count
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISmartStoragesService.SetAutomaticRenew(Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.Common.Requests.SetAutomaticRenewUseCaseRequest,System.Threading.CancellationToken)">
+            <summary>
+            Set automatic renew
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISwaasesService.GetById(Aruba.CmpService.BaremetalProvider.Abstractions.QueryHandlers.Common.Requests.BaseGetByIdRequest{Aruba.CmpService.BaremetalProvider.Abstractions.Models.SwaaSes.Swaas},System.Threading.CancellationToken)">
+            <summary>
+            Get swaas by id
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISwaasesService.Rename(Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.Common.Requests.RenameUseCaseRequest,System.Threading.CancellationToken)">
+            <summary>
+            Rename swaas
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISwaasesService.Search(Aruba.CmpService.BaremetalProvider.Abstractions.QueryHandlers.Swaases.Requests.SwaasSearchFilterRequest,System.Threading.CancellationToken)">
+            <summary>
+            Search swaas
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISwaasesService.SetAutomaticRenew(Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.Common.Requests.SetAutomaticRenewUseCaseRequest,System.Threading.CancellationToken)">
+            <summary>
+            Set automatic renew
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISwaasesService.SearchCatalog(Aruba.CmpService.BaremetalProvider.Abstractions.QueryHandlers.Common.Requests.CatalogFilterRequest,System.Threading.CancellationToken)">
+            <summary>
+            Search swaas catalog
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISwaasesService.GetVirtualSwitches(Aruba.CmpService.BaremetalProvider.Abstractions.QueryHandlers.Swaases.Requests.VirtualSwitchSearchFilterRequest)">
+            <summary>
+            Search virtual switch
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISwaasesService.GetVirtualSwitch(Aruba.CmpService.BaremetalProvider.Abstractions.QueryHandlers.Swaases.Requests.VirtualSwitchGetByIdRequest)">
+            <summary>
+            Get virtual switch
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISwaasesService.AddVirtualSwitch(Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.SwaaSes.Requests.VirtualSwitchAddUseCaseRequest,System.Threading.CancellationToken)">
+            <summary>
+            Add virtual switch
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISwaasesService.EditVirtualSwitch(Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.SwaaSes.Requests.VirtualSwitchEditUseCaseRequest,System.Threading.CancellationToken)">
+            <summary>
+            edit virtual switch
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISwaasesService.DeleteVirtualSwitch(Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.SwaaSes.Requests.VirtualSwitchDeleteUseCaseRequest,System.Threading.CancellationToken)">
+            <summary>
+            Delete virtual switch
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISwaasesService.GetVirtualSwitchLinks(Aruba.CmpService.BaremetalProvider.Abstractions.QueryHandlers.Swaases.Requests.VirtualSwitchLinkSearchFilterRequest)">
+            <summary>
+            Get virtual switch links
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISwaasesService.GetVirtualSwitchLink(Aruba.CmpService.BaremetalProvider.Abstractions.QueryHandlers.Swaases.Requests.VirtualSwitchLinkGetByIdRequest)">
+            <summary>
+            Get virtual switch link
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISwaasesService.AddVirtualSwitchLink(Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.SwaaSes.Requests.VirtualSwitchLinkAddUseCaseRequest,System.Threading.CancellationToken)">
+            <summary>
+            Add virtual switch link
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISwaasesService.DeleteVirtualSwitchLink(Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.SwaaSes.Requests.VirtualSwitchLinkDeleteUseCaseRequest,System.Threading.CancellationToken)">
+            <summary>
+            Delete virtual switch link
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISwaasesService.GetLinkableServices(Aruba.CmpService.BaremetalProvider.Abstractions.QueryHandlers.Swaases.Requests.VirtualSwitchGetLinkableServicesRequest,System.Threading.CancellationToken)">
+            <summary>
+            Get linkable services for the given virtual switch
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISwitchesService.Search(Aruba.CmpService.BaremetalProvider.Abstractions.QueryHandlers.Switches.Requests.SwitchSearchFilterRequest,System.Threading.CancellationToken)">
+            <summary>
+            Search switches
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISwitchesService.GetById(Aruba.CmpService.BaremetalProvider.Abstractions.QueryHandlers.Common.Requests.BaseGetByIdRequest{Aruba.CmpService.BaremetalProvider.Abstractions.Models.Switches.Switch},System.Threading.CancellationToken)">
+            <summary>
+            Get switch by id
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISwitchesService.Rename(Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.Common.Requests.RenameUseCaseRequest,System.Threading.CancellationToken)">
+            <summary>
+            Rename switch
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISwitchesService.SearchCatalog(Aruba.CmpService.BaremetalProvider.Abstractions.QueryHandlers.Common.Requests.CatalogFilterRequest,System.Threading.CancellationToken)">
+            <summary>
+            Search switch catalog
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services.ISwitchesService.SetAutomaticRenew(Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.Common.Requests.SetAutomaticRenewUseCaseRequest,System.Threading.CancellationToken)">
+            <summary>
+            Set automatic renew
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Mapping.CommonMapping.MapToLegacyTypology(System.String)">
+            <summary>
+            Map typology to legacy typology value
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Mapping.CommonMapping.MapToCmpTypology(Aruba.CmpService.BaremetalProvider.Abstractions.Providers.Models.Legacy.Internal.LegacyServiceType)">
+            <summary>
+            Map typology to legacy typology value
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Mapping.PaymentMapping.MapToListItem(Aruba.CmpService.BaremetalProvider.Abstractions.Providers.Models.Legacy.Payments.LegacyPaymentMethod)">
+            <summary>
+            Map legacy payment method model to baremental provider model
+            </summary>
+        </member>
+        <member name="T:Aruba.CmpService.BaremetalProvider.Abstractions.Messages.Notifications.Message">
+            <summary>
+            Dto for message
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Messages.Notifications.Message.Label">
+            <summary>
+            Label
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Messages.Notifications.Message.Params">
+            <summary>
+            Params
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Messages.Notifications.Message.Url">
+            <summary>
+            Url
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Messages.Notifications.Message.Type">
+            <summary>
+            Type
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Messages.Notifications.Message.NotificationCategory">
+            <summary>
+            Category
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Messages.Notifications.Message.DeliveryStatus">
+            <summary>
+            DeliveryStatus
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Messages.Notifications.Message.ReceptionStatus">
+            <summary>
+            ReceptionStatus
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Messages.Notifications.Message.ReadStatus">
+            <summary>
+            ReadStatus
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Messages.Notifications.Notification.Create``1(Aruba.CmpService.BaremetalProvider.Abstractions.Models.ResourceBase{``0},Aruba.CmpService.BaremetalProvider.Abstractions.Messages.Notifications.NotificationMessageActions,Aruba.CmpService.BaremetalProvider.Abstractions.Messages.Notifications.NotificationMessageTypes,System.Nullable{Aruba.CmpService.BaremetalProvider.Abstractions.Models.FailureReason},System.Nullable{Aruba.CmpService.ResourceProvider.Common.Messages.v1.Enums.DisableReason},System.Collections.Generic.Dictionary{System.String,System.String},System.Boolean)">
+            <summary>
+            Constructor
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="deployment"></param>
+            <param name="messageAction"></param>
+            <param name="messageType"></param>
+            <param name="failureReason"></param>
+            <param name="disableReason"></param>
+            <param name="additionalParams"></param>
+            <param name="createUrl"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Aruba.CmpService.BaremetalProvider.Abstractions.Messages.Notifications.NotificationActionStatus">
+            <summary>
+            NotificationActionStatus
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Messages.Notifications.NotificationActionStatus.Completed">
+            <summary>
+            Completed
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Messages.Notifications.NotificationActionStatus.Date">
+            <summary>
+            Date
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.BillingPlan.BillingPeriod">
+            <summary>
+            Billing period
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Category.Name">
+            <summary>
+            Category name
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Category.Provider">
+            <summary>
+            Provider
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Category.Typology">
+            <summary>
+            Typology
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Certificate.Key">
+            <summary>
+            Key
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Certificate.Cert">
+            <summary>
+            Cartificate
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.DataVersion.Current">
+            <summary>
+            Current version
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.DataVersion.Previous">
+            <summary>
+            Previous version
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.DisableReasonDetail.Reason">
+            <summary>
+            Reason
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.DisableReasonDetail.CreationDate">
+            <summary>
+            Creation date
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.DisableReasonDetail.Note">
+            <summary>
+            Notes
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.DisableReasonDetail.Mode">
+            <summary>
+            Disable 
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.DisableStatusInfo.IsDisabled">
+            <summary>
+            True if Disabled
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.DisableStatusInfo.Reasons">
+            <summary>
+            Disable reasons 
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.DisableStatusInfo.PreviousStatus">
+            <summary>
+            Previous status
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Ecommerce.SubscriptionServices">
+            <summary>
+            SubscriptionServices
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Ecommerce.XProject">
+            <summary>
+            XProject
+            </summary>
+        </member>
+        <member name="F:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Enums.AutorenewFolderAction.RemoveFromFolder">
+            <summary>
+            Remove resource from safe folders 
+            </summary>
+        </member>
+        <member name="F:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Enums.AutorenewFolderAction.DisableSafeFolder">
+            <summary>
+            Keep resource in the folders and disable safe folders
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.HPCs.InternalHPCCatalog.BundleConfigurationCode">
+            <summary>
+            ConfigurationCode
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.HPCs.InternalHPCCatalog.Model">
+            <summary>
+            Model
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.HPCs.InternalHPCCatalog.Category">
+            <summary>
+            Category
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.HPCs.InternalHPCCatalog.ServerName">
+            <summary>
+            Server name
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.HPCs.InternalHPCCatalog.Price">
+            <summary>
+            Server Price
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.HPCs.InternalHPCCatalog.Data">
+            <summary>
+            Catalog data by language
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.HPCs.InternalHPCCatalog.Firewall">
+            <summary>
+            Addons
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.HPCs.InternalHPCCatalogFirewall.Model">
+            <summary>
+            Addon Model
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.HPCs.InternalHPCCatalogFirewall.Data">
+            <summary>
+            Addon data by language
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.IpAddress.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.IpAddress.Ip">
+            <summary>
+            Ip
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.IpAddress.Type">
+            <summary>
+            Type
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.IpAddress.Status">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.IpAddress.Description">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.IpAddress.HostNames">
+            <summary>
+            HostNames
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.IResourceBase.Category">
+            <summary>
+            Category
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.IResourceBase.CreationDate">
+            <summary>
+            CreationDate 
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.IResourceBase.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.IResourceBase.Uri">
+            <summary>
+            Uri
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.IResourceBase.UpdateDate">
+            <summary>
+            Update date
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.IResourceBase.Location">
+            <summary>
+            Location
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.IResourceBase.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.IResourceBase.Project">
+            <summary>
+            Project
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.IResourceBase.Status">
+            <summary>
+            Status
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.IResourceBase.Ecommerce">
+            <summary>
+            Ecommerce
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.IResourceBase.Tags">
+            <summary>
+            Tags
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.IResourceBase.Version">
+            <summary>
+            Version
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.IResourceBase.CreatedBy">
+            <summary>
+            Creation by user
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Models.IResourceBase.HasDifferentProjectFrom(Aruba.CmpService.BaremetalProvider.Abstractions.Models.IResourceBase)">
+            <summary>
+            True if Has Different Project From
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.IResourceBase.LinkedResources">
+            <summary>
+            Linked resource
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.LinkedResource.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.LinkedResource.Typology">
+            <summary>
+            Typology
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.LinkedResource.Uri">
+            <summary>
+            Uri
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.LinkedResource.LinkCreationDate">
+            <summary>
+            Link Creation Date
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.LinkedResource.LinkType">
+            <summary>
+            Link type
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.LinkedResource.RelationName">
+            <summary>
+            Relation Name 
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.LinkedResource.Ready">
+            <summary>
+            True if ready
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.LinkedResource.StrictCorrelation">
+            <summary>
+            True if strict correlation
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.ListResponse`1.TotalCount">
+            <summary>
+            Total count
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.ListResponse`1.Values">
+            <summary>
+            Values
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Location.Code">
+            <summary>
+            Code
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Location.Country">
+            <summary>
+            Country
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Location.City">
+            <summary>
+            City
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Location.Value">
+            <summary>
+            Value
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Location.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.LocationMap.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.LocationMap.Value">
+            <summary>
+            Value
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.LocationMap.LegacyValue">
+            <summary>
+            Legacy value 
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.MCIs.InternalMCICatalog.BundleConfigurationCode">
+            <summary>
+            ConfigurationCode
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.MCIs.InternalMCICatalog.Model">
+            <summary>
+            Model
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.MCIs.InternalMCICatalog.Category">
+            <summary>
+            Category
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.MCIs.InternalMCICatalog.ServerName">
+            <summary>
+            Server name
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.MCIs.InternalMCICatalog.Price">
+            <summary>
+            Server Price
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.MCIs.InternalMCICatalog.Data">
+            <summary>
+            Catalog data by language
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.MCIs.InternalMCICatalog.Firewall">
+            <summary>
+            Addons
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.MCIs.InternalMCICatalogFirewall.Model">
+            <summary>
+            Addon Model
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.MCIs.InternalMCICatalogFirewall.Data">
+            <summary>
+            Addon data by language
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.PreviousStatus.State">
+            <summary>
+            State
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.PreviousStatus.CreationDate">
+            <summary>
+            Creation date
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Project.Id">
+            <summary>
+            Project id
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Project.Name">
+            <summary>
+            Project name
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.ResourceBase`1.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.ResourceBase`1.Uri">
+            <summary>
+            Uri
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.ResourceBase`1.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.ResourceBase`1.Location">
+            <summary>
+            Location
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.ResourceBase`1.Project">
+            <summary>
+            Project
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.ResourceBase`1.Tags">
+            <summary>
+            Tags
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.ResourceBase`1.CreationDate">
+            <summary>
+            Creation date
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.ResourceBase`1.UpdateDate">
+            <summary>
+            Update date
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.ResourceBase`1.CreatedBy">
+            <summary>
+            Created by user
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.ResourceBase`1.UpdatedBy">
+            <summary>
+            Updated by user
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.ResourceBase`1.Status">
+            <summary>
+            Status
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.ResourceBase`1.Category">
+            <summary>
+            Category
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.ResourceBase`1.Ecommerce">
+            <summary>
+            Ecommerce data
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.ResourceBase`1.Version">
+            <summary>
+            Version
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.ResourceBase`1.LinkedResources">
+            <summary>
+            Linked resources
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.ResourceBase`1.Properties">
+            <summary>
+            Properties
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Models.ResourceBase`1.ChangeVersion">
+            <summary>
+            Change version
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Models.ResourceBase`1.HasDifferentProjectFrom(Aruba.CmpService.BaremetalProvider.Abstractions.Models.IResourceBase)">
+            <summary>
+            True if has different project from
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Servers.InternalServerCatalog.Model">
+            <summary>
+            Model
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Servers.InternalServerCatalog.ServerName">
+            <summary>
+            Server name
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Servers.InternalServerCatalog.Location">
+            <summary>
+            Server location
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Servers.InternalServerCatalog.ProductCode">
+            <summary>
+            Product Code
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Servers.InternalServerCatalog.Data">
+            <summary>
+            Catalog data by language
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Service.InitialOrder">
+            <summary>
+            Initial order
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Service.OrderItemId">
+            <summary>
+            Order item id
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Service.ProductVariantId">
+            <summary>
+            Product variant id 
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Service.ProductPlanId">
+            <summary>
+            Product plan id
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Service.Type">
+            <summary>
+            Service type
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Service.Name">
+            <summary>
+            Service name
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Service.ServiceId">
+            <summary>
+            Service id
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Service.ServiceGroupId">
+            <summary>
+            Service group id
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Service.Status">
+            <summary>
+            Status
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Service.CreationDate">
+            <summary>
+            Creation date
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Service.Resource">
+            <summary>
+            Quantity
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Service.ExtraInfo">
+            <summary>
+            Extra info
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.ServiceResource.Path">
+            <summary>
+            Service resource path
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Status.State">
+            <summary>
+            State
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Status.CreationDate">
+            <summary>
+            Creation date
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Status.DisableStatusInfo">
+            <summary>
+            Disable status info
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.SubscriptionExtraInfo.ProvisioningProductId">
+            <summary>
+            Provisioning Product Id 
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.SubscriptionExtraInfo.ProvisioningProductName">
+            <summary>
+            Provisioning Product Name 
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.SubscriptionExtraInfo.DataCenter">
+            <summary>
+            Data center
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.SubscriptionServices.ServiceBasketId">
+            <summary>
+            Service basket id
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.SubscriptionServices.SubscriptionId">
+            <summary>
+            Subscription id
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.SubscriptionServices.BillingContainerId">
+            <summary>
+            Billing Container id
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.SubscriptionServices.ServiceGroupId">
+            <summary>
+            Service Group Id 
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.SubscriptionServices.OrderId">
+            <summary>
+            Order id
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.SubscriptionServices.Currency">
+            <summary>
+            Currency
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.SubscriptionServices.TotalPrice">
+            <summary>
+            Total price
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.SubscriptionServices.Plan">
+            <summary>
+            Billing plan
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.SubscriptionServices.Services">
+            <summary>
+            Services
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.SwaaSes.InternalSwaasCatalog.Data">
+            <summary>
+            Catalog data by language
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Token.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Token.Value">
+            <summary>
+            Value
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Token.UserId">
+            <summary>
+            User id
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Token.ExpiredAt">
+            <summary>
+            Expired at
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Typology.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Typology.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.UriInfo.IsValid">
+            <summary>
+            True if is valid
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.UriInfo.ResourceId">
+            <summary>
+            Resource id
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.UriInfo.ProjectId">
+            <summary>
+            Project id
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.UriInfo.ResourceType">
+            <summary>
+            Resource type
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.UriInfo.ResourceProvider">
+            <summary>
+            Resource provider
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.UserServiceModel.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.UserServiceModel.Username">
+            <summary>
+            Username
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.UserServiceModel.Account">
+            <summary>
+            Account
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.UserServiceModel.Tenant">
+            <summary>
+            Tenant
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.UserServiceModel.Company">
+            <summary>
+            Company
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.UserServiceModel.Profile">
+            <summary>
+            Profile
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.UserServiceModel.Role">
+            <summary>
+            Role
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.UserServiceModel.PriceList">
+            <summary>
+            PriceList
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Version.Data">
+            <summary>
+            Version data
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.Version.Model">
+            <summary>
+            Model
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Models.VlanId.Vlanid">
+            <summary>
+            Vlanid
+            </summary>
+        </member>
+        <member name="T:Aruba.CmpService.BaremetalProvider.Abstractions.Providers.Models.ApiError">
+            <summary>
+            Compliant con la RFC 7807 su come deve essere gestito l'inoltro al client dei dettagli di un errore (es. BadRequest)
+            da parte di una API
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Providers.Models.ApiError.Code">
+            <summary>
+            Codice di errore
+            </summary>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Providers.Models.ApiError.New(System.Net.HttpStatusCode,System.String,System.String,System.String)">
+            <summary>
+            Builder method di un ApiError
+            </summary>
+            <param name="errocCode">codice di errore</param>
+            <param name="errorMessage">messaggio di errore</param>
+            <param name="type">endpoint chiamato</param>
+            <returns></returns>
+        </member>
+        <member name="M:Aruba.CmpService.BaremetalProvider.Abstractions.Providers.Models.ApiError.ToString">
+            <summary>
+            Descrizione di ApiError
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Providers.Models.ApiError.Errors">
+            <summary>
+            Errori di validazione
+            </summary>    
+        </member>
+        <member name="T:Aruba.CmpService.BaremetalProvider.Abstractions.Providers.Models.ApiCallOutput">
+            <summary>
+            Output di una chiamata ad un api
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Providers.Models.ApiCallOutput.Success">
+            <summary>
+            Indica se la chiamata è andata a buon fine
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Providers.Models.ApiCallOutput.Err">
+            <summary>
+            Descrittore dell'errore in caso di chiamata ko
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Providers.Models.ApiCallOutput.StatusCode">
+            <summary>
+            Stato della chiamata
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Providers.Models.ApiCallOutput.InternalServerError">
+            <summary>
+            Messaggio di errore nel caso di 500
+            </summary>
+        </member>
+        <member name="T:Aruba.CmpService.BaremetalProvider.Abstractions.Providers.Models.ApiCallOutput`1">
+            <summary>
+            Output di una chiamata ad un api
+            </summary>
+            <typeparam name="T">tipo dell'oggetto in response</typeparam>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Providers.Models.ApiCallOutput`1.Result">
+            <summary>
+            EVentuale oggetto restituito dall'api
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Providers.Models.Legacy.SmartStorages.LegacyProtocol.Error">
+            <summary>
+            TRUE if an error occured while retrieving service data
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Providers.Models.Legacy.SmartStorages.LegacyProtocol.ErrorMessage">
+            <summary>
+            Description of the error occured while retrieving service data
+            </summary>
+        </member>
+        <member name="T:Aruba.CmpService.BaremetalProvider.Abstractions.Providers.Models.Location">
+            <summary>
+            Location service model
+            </summary>
+        </member>
+        <member name="T:Aruba.CmpService.BaremetalProvider.Abstractions.Providers.Models.DataCenter">
+            <summary>
+            DataCenter service submodel
+            </summary>
+        </member>
+        <member name="T:Aruba.CmpService.BaremetalProvider.Abstractions.Providers.Models.TypologyDetail">
+            <summary>
+            TypologyDetail service submodel
+            </summary>
+        </member>
+        <member name="T:Aruba.CmpService.BaremetalProvider.Abstractions.Providers.Models.TypologyDetailExtraInfo">
+            <summary>
+            TypologyDetailExtraInfo service submodel
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Providers.Models.Profile.UserProfile.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Providers.Models.Profile.UserProfile.Username">
+            <summary>
+            Username
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Providers.Models.Profile.UserProfile.Account">
+            <summary>
+            Account
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Providers.Models.Profile.UserProfile.Tenant">
+            <summary>
+            Tenant
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Providers.Models.Profile.UserProfile.Company">
+            <summary>
+            Company
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Providers.Models.Profile.UserProfile.Profile">
+            <summary>
+            Profile
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Providers.Models.Profile.UserProfile.Role">
+            <summary>
+            Role
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Providers.Models.Profile.UserProfile.PriceList">
+            <summary>
+            PriceList
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.Providers.Models.Profile.UserProfile.IsResellerCustomer">
+            <summary>
+            IsResellerCustomer
+            </summary>
+        </member>
+        <member name="T:Aruba.CmpService.BaremetalProvider.Abstractions.Providers.Models.Typology">
+            <summary>
+            Location service model
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.QueryHandlers.SmartStorages.Responses.GetAvailableSmartFoldersResponse.AvailableSmartFolders">
+            <summary>
+            Number of available smart folders
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.Internal.Requests.InternalAutorechargeUseCaseRequest.UseAdminProvider">
+            <summary>
+            If TRUE use <see cref="T:Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Providers.IAdminLegacyProvider"/> with admin token
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.SmartStorages.Requests.SmartStorageApplySnapshotUseCaseRequest.SnapshotId">
+            <summary>
+            Snapshot Id
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.SmartStorages.Requests.SmartStorageCreateFolderUseCaseRequest.Name">
+            <summary>
+            New folder name
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.SmartStorages.Requests.SmartStorageCreateSnapshotTaskUseCaseRequest.SnapshotTask">
+            <summary>
+            The dto of snapshot task to create
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.SmartStorages.Requests.SmartStorageCreateSnapshotUseCaseRequest.FolderName">
+            <summary>
+            The name of the folder
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.SmartStorages.Requests.SmartStorageDeleteFolderUseCaseRequest.SmartFolderId">
+            <summary>
+            Snapshot Id
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.SmartStorages.Requests.SmartStorageDeleteSnapshotTaskUseCaseRequest.SnapshotId">
+            <summary>
+            Snapshot Id
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.SmartStorages.Requests.SmartStorageDeleteSnapshotUseCaseRequest.SnapshotId">
+            <summary>
+            Snapshot Id
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.SmartStorages.Requests.SmartStorageDisableProtocolUseCaseRequest.ServiceType">
+            <summary>
+            Protocol type
+            </summary>
+        </member>
+        <member name="P:Aruba.CmpService.BaremetalProvider.Abstractions.UseCases.SmartStorages.Requests.SmartStorageEnableProtocolUseCaseRequest.ServiceType">
+            <summary>
+            Protocol type
+            </summary>
+        </member>
+    </members>
+</doc>

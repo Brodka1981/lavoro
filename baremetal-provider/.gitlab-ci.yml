@@ -1,0 +1,16 @@
+include:
+  - project: dev-ops/cicd/templates
+    ref: v2.34
+    file: /dotnet/nps/dotnet8-sp-sa-docker.gitlab-ci.yaml
+
+check-values-lint:merge:
+    allow_failure: true
+
+check-images:merge:
+  allow_failure: true
+
+read-version:
+  variables:
+    DIRECTORYFILEVERSION: src/Aruba.CmpService.BaremetalProvider.Api/Aruba.CmpService.BaremetalProvider.Api.csproj
+
+

@@ -1,0 +1,75 @@
+﻿using Aruba.CmpService.BaremetalProvider.Abstractions.Extensions;
+using Aruba.CmpService.BaremetalProvider.Abstractions.Interfaces.Services;
+using Aruba.CmpService.BaremetalProvider.Abstractions.Models.SwaaSes;
+using Aruba.CmpService.BaremetalProvider.Abstractions.QueryHandlers.Common.Requests;
+using Aruba.CmpService.ResourceProvider.Common.ResourceQuery.Sorting;
+
+namespace Aruba.CmpService.BaremetalProvider.Abstractions.QueryHandlers.Swaases;
+
+public class SwaasSearchCatalogQueryHandler : IQueryHandler<CatalogFilterRequest, SwaasCatalog>
+{
+    private readonly ISwaasesService _swaasesService;
+
+    public SwaasSearchCatalogQueryHandler(ISwaasesService swaasesService)
+    {
+        _swaasesService = swaasesService;
+    }
+
+    public async Task<SwaasCatalog> Handle(CatalogFilterRequest request)
+    {
+        ParametersCheck(request);
+
+        var catalog = await _swaasesService.SearchCatalog(request, CancellationToken.None).ConfigureAwait(false);
+        if (!catalog.Errors.Any())
+        {
+
+            var catalogItems = catalog.Value!.Values;
+            //Filtro per
+            //ricerca fulltext 
+            //sul campo Name
+            var nameFilter = request.Query.Filters.FirstOrDefault(f => string.Equals(f.FieldName, "fulltextsearch", StringComparison.OrdinalIgnoreCase))?.Argument.As<string?>();
+            if (!string.IsNullOrWhiteSpace(nameFilter))
+            {
+                catalogItems = catalogItems.Where(w => w.Name!.Contains(nameFilter, StringComparison.OrdinalIgnoreCase)).ToList();
+            }
+            long totalCount = catalogItems.Count;
+
+            //Ordinamento
+            //Campi da ordinare
+            //Price,NetworkCount,Name
+            string? sortField = request.Query.Sorts.FirstOrDefault()?.FieldName?.ToUpperInvariant();
+            bool sortDescending = request.Query.Sorts.FirstOrDefault()?.Direction == SortDirection.Descending;
+            switch (sortField)
+            {
+                case "PRICE":
+                    catalogItems = catalogItems.SortBy(o => o.Price, !sortDescending).ToList();
+                    break;
+                case "NAME":
+                    catalogItems = catalogItems.SortBy(o => o.Name, !sortDescending).ToList();
+                    break;
+                case "NETWORKCOUNT":
+                    catalogItems = catalogItems.SortBy(o => o.NetworksCount, !sortDescending).ToList();
+                    break;
+                default:
+                    catalogItems = catalogItems.OrderBy(o => o.Price).ToList();
+                    break;
+            }
+            //Paginazione
+            catalogItems = catalogItems.Page(request.Query.Pagination, request.External).ToList();
+            return new SwaasCatalog
+            {
+                TotalCount = totalCount,
+                Values=catalogItems
+            };
+        }
+        return null!;
+    }
+
+    private static void ParametersCheck(CatalogFilterRequest request)
+    {
+        ArgumentNullException.ThrowIfNull(request);
+    }
+
+
+
+}

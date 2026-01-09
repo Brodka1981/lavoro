@@ -1,0 +1,371 @@
+---
+image:
+  repository: nexusrepo.aruba.it:5027/devspa/cloud/new-cmp/provider/build/baremetal-provider
+  pullPolicy: Always
+  tag: develop-unstable
+
+service:
+  type: ClusterIP
+  name: cmp-baremetal-provider
+
+ports:
+  - name: http
+    containerPort: 8080
+    servicePort: 80
+  - name: metrics
+    containerPort: 9080
+    servicePort: 8080
+
+readinessProbe:
+  httpGet:
+    path: /health/probes/readiness
+    port: metrics
+  periodSeconds: 10
+  timeoutSeconds: 5
+
+livenessProbe:
+  httpGet:
+    path: /health/probes/liveness
+    port: metrics
+  initialDelaySeconds: 10
+  periodSeconds: 10
+  timeoutSeconds: 5
+
+startupProbe:
+  httpGet:
+    path: /health/probes/startup
+    port: metrics
+  initialDelaySeconds: 10
+  periodSeconds: 10
+  timeoutSeconds: 5
+
+serviceMonitor:
+  enabled: true
+  namespace: cmp-resource-api
+  endpoints:
+    - interval: 15s
+      port: metrics
+      path: /metrics
+
+addons:
+  liquibase:
+    enabled: false
+    type: mongodb
+    # user: "{{ $.Values.mongodb.user}}"
+    # pass: "{{ $.Values.mongodb.password}}"
+    user: "Information"
+    pass: "Information"
+    url: "{{ $.Values.mongodb.liquibaseconnectionstring}}/cmp-provider-baremetal?authSource=admin"
+    path: scripts/liquibase/
+    changelog: master.xml
+
+resources:
+  requests:
+    memory: 240Mi
+    cpu: 700m
+  limits:
+    memory: 500Mi
+    cpu: 1400m
+
+istio:
+  enabled: false
+  host: baremetal-provider
+  domain: "{{ $.Values.ServiceName }}-cmp.{{ $.Values.domain }}"
+  port: 80
+  gateway: istio-system/istio-gw-priv
+
+ingress:
+  enabled: false
+  className: nginx-ext
+  hosts:
+    - host: "{{ $.Values.ingresshost }}"
+      paths:
+        - path: /
+          pathType: Prefix
+          port: 80
+
+
+extraSecrets:
+  - name: kafka-ca
+    exists: true    
+    mount: "file"
+    base64: true
+    path: /app/kafka-ca/
+
+  - name: kafka-client
+    exists: true    
+    mount: "file"
+    base64: true
+    path: /app/kafka-client/
+
+  - name: kafka-ca-platform
+    exists: true    
+    mount: "file"
+    base64: true
+    path: /app/kafka-ca-platform/
+
+  - name: kafka-client-platform
+    exists: true    
+    mount: "file"
+    base64: true
+    path: /app/kafka-client-platform/
+
+  - name: kafka-ca-auditing
+    exists: true    
+    mount: "file"
+    base64: true
+    path: /app/kafka-ca-auditing/
+
+  - name: appsettings
+    mount: "subPath"
+    path: /app/
+    data:
+      appsettings.json: |
+        {
+            "AllowedHosts": "*",
+            "AllowedOrigin": {
+                "Host": [
+                    "http://localhost:4200",
+                    "http://cmp-new.dev.aruba.io"
+                ]
+            },
+            "EnableSwagger": {{ $.Values.enableswagger }},
+            "Logging": {
+                "LogLevel": {
+                    "Default": "{{ $.Values.loglevel }}",
+                    "Microsoft.AspNetCore": "{{ $.Values.loglevel }}"
+                }
+            },              
+            "Observability": {
+                "HttpProbingEndpointPort": 63599,
+                "ServiceName": "Aruba.CmpService.BaremetalProvider.Api"
+            },
+            "MongoDB": {
+                "ConnectionString": "{{ $.Values.mongodb.connectionstring }}",
+                "NameDb": "cmp-provider-baremetal",
+                "HealthCheckTimeoutInMs":10000
+            },
+            "MessageBus": {
+              "GroupId": "it.aruba.cmpservice.baremetalprovider.consumer",
+              "Servers": {
+                "default": {
+                  "BootstrapServers": "{{ $.Values.messagebuskafkaoptions.bootstrapservers }}",
+                  "SaslUsername": "{{ $.Values.messagebuskafkaoptions.saslusername }}",
+                  "SaslPassword": "{{ $.Values.messagebuskafkaoptions.saslpassword }}",
+                  "SslCaLocation": "kafka-ca/kafka-ca",
+                  "SslCertificateLocation": "kafka-client/kafka-trasversale.client.truststore.cer",
+                  "HealthCheckTopic": "cmp-it.aruba.cmpservice.mbus.healthchecks",
+                  "HealthCheckTimeoutInMs": 20000,
+                  "ObservabilityName":"kafka-cmp",
+                  "Topics": {
+                    "DeploymentSagaMessages": "cmp-it.aruba.cmpservice.mbus.deployment.saga.messages",
+                    "DeploymentEvents": "cmp-it.aruba.cmpservice.mbus.deployment.events",
+                    "NotificationEvents": "cmp-it.aruba.cmpservice.mbus.notification.events",
+                    "ResourcesEvents": "cmp-it.aruba.cmpservice.mbus.resources.events",
+                    "ExternalNotificationEvents": "cmp-it.aruba.cmpservice.mbus.notification.communication"
+                  }
+                },
+                "platform": {
+                  "BootstrapServers": "{{ $.Values.messagebuskafkaoptions.bootstrapserversplatform }}",
+                  "SaslUsername": "{{ $.Values.messagebuskafkaoptions.saslusernameplatform }}",
+                  "SaslPassword": "{{ $.Values.messagebuskafkaoptions.saslpasswordplatform }}",
+                  "SslCaLocation": "kafka-ca-platform/kafka-ca",
+                  "SslCertificateLocation": "kafka-client-platform/kafka-trasversale.client.truststore.cer",
+                  "HealthCheckTopic": "cmp-it.aruba.cmpservice.mbus.healthchecks",
+                  "HealthCheckTimeoutInMs": 20000,
+                  "ObservabilityName":"kafka-platform",
+                  "Topics": {
+                    "PlatformEvents": "cmp-it.aruba.cmpeng.operator.kmsaas"
+                  }
+                }
+              },
+            "CeTypes": {              
+              "DeploymentStatusChanged": "it.aruba.cmpservice.deployments.DeploymentStatusChanged.v1",
+              "Notification": "it.aruba.cmpservice.notification.v1.NotificationCreated",
+              "FirewallUpdatedDeployment": "it.aruba.cmpservice.firewall.updated.v1",
+              "ServerUpdatedDeployment": "it.aruba.cmpservice.server.updated.v1",
+              "SmartStorageUpdatedDeployment": "it.aruba.cmpservice.smartstorage.updated.v1",
+              "SwaasUpdatedDeployment": "it.aruba.cmpservice.swaas.updated.v1",
+              "SwitchUpdatedDeployment": "it.aruba.cmpservice.switch.updated.v1",
+              "MCIUpdatedDeployment": "it.aruba.cmpservice.mci.updated.v1",
+              "HPCUpdatedDeployment": "it.aruba.cmpservice.hpc.updated.v1"
+            }
+          },
+          "ExternalEndpoints": {
+            "ProjectService"  : "http://cmp-project-service.cmp-platform-services.svc.80.mesh",
+            "ECommerceOrderService": "{{ $.Values.externalendpoint.ecommerceorderservice }}",
+            "ProfileProvider": "http://cmp-profile-service.cmp-profile.svc.80.mesh",
+            "ResourceManagerProvider": "http://cmp-resource-manager.cmp-resource-manager.svc.80.mesh/",
+            "CatalogueProvider": "http://cmp-catalogue-service.cmp-common-services.svc.80.mesh",
+            "LegacyProvider":"https://api.aruba.it/",
+            "LegacyAuthenticationProvider": "https://api.aruba.it/common/api/Auth/",
+            "AdminLegacyProvider": "https://api.aruba.it/"
+          },
+          "Baremetal": {
+            "PurchaseUrl": "{{ $.Values.baremetal.purchaseurl }}",
+            "RenewUrl": "{{ $.Values.baremetal.renewurl }}",
+            "RenewAndUpgradeUrl": "{{ $.Values.baremetal.renewandupgradeurl }}",
+            "RenewAndUpgradeSmartStorageAndSwaasUrl": "{{ $.Values.baremetal.renewandupgradesmartstorageandupgradeurl }}",
+            "SddTimeLimit": {{ $.Values.baremetal.sddtimelimit }},
+            "CryptoKey": "{{ $.Values.baremetal.cryptokey }}",
+            "FrameworkAiGuides": {{ $.Values.baremetal.frameworkaiguides }},
+            "SmartStorageAiGuides": {{ $.Values.baremetal.smartstorageaiguides }}
+          },
+          "RenewFrequency": {{ $.Values.baremetal.renewfrequency }},
+          "AuditingOptions": {
+            "AuditEnabled": true,
+            "Origin": "CloudManagementPlatform",
+            "AuditProducerOptions": {
+            "FirstProducer": {
+                "AuditTopic": "cmp-it.aruba.cmpservice.observability.auditing",
+                "BootstrapServers": "{{ $.Values.auditingoptions.firstproducer.bootstrapservers }}",
+                "SaslUsername": "{{ $.Values.auditingoptions.firstproducer.saslusername }}",
+                "SaslPassword": "{{ $.Values.auditingoptions.firstproducer.saslpassword }}",
+                "SslCaLocation": "kafka-ca-auditing/kafka-ca",
+                "SslCertificateLocation": ""
+              }
+            },
+            "AuditEventOptions": { 
+              "CreateServerRequest": {
+                "EventValue": "CreateServerRequest",
+                "EventType": "User",
+                "OperationId": "4c1143a3-2fa6-4d7f-9eaa-8fa7351dd159",
+                "OperationValue": "Creation",
+                "CategoryValue": "Administrative"
+              },
+              "CreateServer": {
+                "EventValue": "CreateServer",
+                "EventType": "User",
+                "OperationId": "4c1143a3-2fa6-4d7f-9eaa-8fa7351dd159",
+                "OperationValue": "Creation",
+                "CategoryValue": "Administrative"
+              },
+              "UpdateServerRequest": {
+                "EventValue": "UpdateServerRequest",
+                "EventType": "User",
+                "OperationId": "4c1143a3-2fa6-4d7f-9eaa-8fa7351dd159",
+                "OperationValue": "Creation",
+                "CategoryValue": "Administrative"
+              },
+              "UpdateServer": {
+                "EventValue": "UpdateServer",
+                "EventType": "User",
+                "OperationId": "4c1143a3-2fa6-4d7f-9eaa-8fa7351dd159",
+                "OperationValue": "Creation",
+                "CategoryValue": "Administrative"
+              },
+              "CreateSwitchRequest": {
+                "EventValue": "CreateSwitchRequest",
+                "EventType": "User",
+                "OperationId": "4c1143a3-2fa6-4d7f-9eaa-8fa7351dd159",
+                "OperationValue": "Creation",
+                "CategoryValue": "Administrative"
+              },
+              "CreateSwitch": {
+                "EventValue": "CreateSwitch",
+                "EventType": "User",
+                "OperationId": "4c1143a3-2fa6-4d7f-9eaa-8fa7351dd159",
+                "OperationValue": "Creation",
+                "CategoryValue": "Administrative"
+              },
+              "UpdateSwitch": {
+                "EventValue": "UpdateSwitch",
+                "EventType": "User",
+                "OperationId": "4c1143a3-2fa6-4d7f-9eaa-8fa7351dd159",
+                "OperationValue": "Creation",
+                "CategoryValue": "Administrative"
+              },
+              "CreateSwaasRequest": {
+                "EventValue": "CreateSwaasRequest",
+                "EventType": "User",
+                "OperationId": "4c1143a3-2fa6-4d7f-9eaa-8fa7351dd159",
+                "OperationValue": "Creation",
+                "CategoryValue": "Administrative"
+              },
+              "CreateSwaas": {
+                "EventValue": "CreateSwaas",
+                "EventType": "User",
+                "OperationId": "4c1143a3-2fa6-4d7f-9eaa-8fa7351dd159",
+                "OperationValue": "Creation",
+                "CategoryValue": "Administrative"
+              },
+              "UpdateSwaas": {
+                "EventValue": "UpdateSwaas",
+                "EventType": "User",
+                "OperationId": "4c1143a3-2fa6-4d7f-9eaa-8fa7351dd159",
+                "OperationValue": "Creation",
+                "CategoryValue": "Administrative"
+              },
+              "AddVirtualSwitch": {
+                "EventValue": "AddVirtualSwitch",
+                "EventType": "User",
+                "OperationId": "4c1143a3-2fa6-4d7f-9eaa-8fa7351dd159",
+                "OperationValue": "Creation",
+                "CategoryValue": "Administrative"
+              },
+              "EditVirtualSwitch": {
+                "EventValue": "EditVirtualSwitch",
+                "EventType": "User",
+                "OperationId": "4c1143a3-2fa6-4d7f-9eaa-8fa7351dd159",
+                "OperationValue": "Creation",
+                "CategoryValue": "Administrative"
+              },
+              "RemoveVirtualSwitch": {
+                "EventValue": "RemoveVirtualSwitch",
+                "EventType": "User",
+                "OperationId": "4c1143a3-2fa6-4d7f-9eaa-8fa7351dd159",
+                "OperationValue": "Creation",
+                "CategoryValue": "Administrative"
+              },
+              "AddLink": {
+                "EventValue": "AddLink",
+                "EventType": "User",
+                "OperationId": "4c1143a3-2fa6-4d7f-9eaa-8fa7351dd159",
+                "OperationValue": "Creation",
+                "CategoryValue": "Administrative"
+              },
+              "EditLink": {
+                "EventValue": "EditLink",
+                "EventType": "User",
+                "OperationId": "4c1143a3-2fa6-4d7f-9eaa-8fa7351dd159",
+                "OperationValue": "Creation",
+                "CategoryValue": "Administrative"
+              },
+              "RemoveLink": {
+                "EventValue": "RemoveLink",
+                "EventType": "User",
+                "OperationId": "4c1143a3-2fa6-4d7f-9eaa-8fa7351dd159",
+                "OperationValue": "Creation",
+                "CategoryValue": "Administrative"
+              },
+              "AddVirtualSwitchRequest": {
+                "EventValue": "AddVirtualSwitchRequest",
+                "EventType": "User",
+                "OperationId": "4c1143a3-2fa6-4d7f-9eaa-8fa7351dd159",
+                "OperationValue": "Creation",
+                "CategoryValue": "Administrative"
+              },
+              "RemoveVirtualSwitchRequest": {
+                "EventValue": "RemoveVirtualSwitchRequest",
+                "EventType": "User",
+                "OperationId": "4c1143a3-2fa6-4d7f-9eaa-8fa7351dd159",
+                "OperationValue": "Creation",
+                "CategoryValue": "Administrative"
+              }
+            }
+          },
+          "TokenManagement": {
+            "TokenEndpoint": "https://api.aruba.it/common/api/Auth/",
+            "ClientId": "client-id",
+            "ClientSecret": "client-secret",
+            "Scope": "",
+            "CacheLifeTimeBuffer": 60
+          },
+          "EnableUpdatedEvent": {
+            "Enable": {{ $.Values.enableupdatedevent }}
+          },
+          "LegacyAdminCredentials": {
+            "Username": "{{ $.Values.legacyadminuser }}",
+            "Password": "{{ $.Values.legacyadminpassword }}"
+          }
+        }

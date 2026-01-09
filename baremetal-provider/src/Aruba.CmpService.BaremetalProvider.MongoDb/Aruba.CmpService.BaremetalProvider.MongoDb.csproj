@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Db\**" />
+    <Compile Remove="temp\**" />
+    <EmbeddedResource Remove="Db\**" />
+    <EmbeddedResource Remove="temp\**" />
+    <None Remove="Db\**" />
+    <None Remove="temp\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aruba.MongoDb" Version="5.0.0" />
+    <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Aruba.CmpService.BaremetalProvider.Abstractions\Aruba.CmpService.BaremetalProvider.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>
